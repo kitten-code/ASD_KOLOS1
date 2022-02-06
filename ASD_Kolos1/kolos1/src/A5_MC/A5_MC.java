@@ -84,7 +84,7 @@ public class A5_MC {
             }
 
             for (int j = 1; j < zaprogramowanaLiczbaSmakow - 1; j++) {
-                sumaWLosowaniu += czas[kolejnoscWLosowaniu[j - 1]] ;
+              //  sumaWLosowaniu += czas[kolejnoscWLosowaniu[j - 1]] ;
             }
 
             System.out.println("Wylosowane smaki: " + Arrays.toString(kolejnoscWLosowaniu));
