@@ -1,4 +1,4 @@
-package A28_MC;
+package A28_AZ;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
