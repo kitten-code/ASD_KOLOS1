@@ -10,7 +10,6 @@ public class A5_MC {
         final int LICZBA_SMAKOW = 6;
         final int LICZBA_LOSOWAN = 100;
         final int czas[][] = new int[6][6];
-
 //x/y
         czas[0][0] = 0;
         czas[0][1] = 7;
@@ -59,9 +58,8 @@ public class A5_MC {
             System.out.println(Arrays.toString(czas[i]));
         }
 
-
-        int[] minKolejnoscSmakow = new int[LICZBA_SMAKOW];
-        int minSumaSmakow = 0;
+        int[] najlepszaKolejnoscSmakowDoTeraz = new int[LICZBA_SMAKOW];
+        int najlepszyCzasDoTeraz = 0;
 
         Random random = new Random();
 
@@ -83,13 +81,27 @@ public class A5_MC {
                 zaprogramowanaLiczbaSmakow++;
             }
 
-            for (int j = 1; j < zaprogramowanaLiczbaSmakow - 1; j++) {
-              //  sumaWLosowaniu += czas[kolejnoscWLosowaniu[j - 1]] ;
+            for (int j = 0; j < kolejnoscWLosowaniu.length - 1; j++) {
+                if (j + 1 < kolejnoscWLosowaniu.length - 1)
+                    sumaWLosowaniu += czas[kolejnoscWLosowaniu[j]-1][kolejnoscWLosowaniu[j+1]-1];
             }
 
             System.out.println("Wylosowane smaki: " + Arrays.toString(kolejnoscWLosowaniu));
             System.out.println("Suma smakow: " + sumaWLosowaniu);
+
+            // to znaczy, ze wczesniej bylo gorzej niz teraz i dopsiujemy te najlepsze wartosci
+            // czyli sprawdzamy czy najlepszyCzas to nie 0, bo jesli tak to znaczy, ze jest
+            // to pierwsza iteracja, tj. pierwsze losowanie wiec musimy dopisac jakies wartosci
+            // albo sprawdzamy czy wczesniej bylo gorzej niz teraz, jesli tak
+            // to dopisujemy tam te wartosci
+            if(najlepszyCzasDoTeraz == 0 || najlepszyCzasDoTeraz > sumaWLosowaniu) {
+                najlepszyCzasDoTeraz = sumaWLosowaniu;
+                najlepszaKolejnoscSmakowDoTeraz = kolejnoscWLosowaniu;
+            }
         }
+
+        System.out.println("Najlepsze Wylosowane smaki: " + Arrays.toString(najlepszaKolejnoscSmakowDoTeraz));
+        System.out.println("Najmniejszy czas: " + najlepszyCzasDoTeraz);
     }
 
     public static boolean SmakJestJuzWTablicy(int[] tablica, int smak) {
@@ -101,7 +113,6 @@ public class A5_MC {
 
         return false;
     }
-
 }
 
 
