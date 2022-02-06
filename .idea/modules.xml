@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ASD_Kolos1/A5_AZ/A5_AZ.iml" filepath="$PROJECT_DIR$/ASD_Kolos1/A5_AZ/A5_AZ.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ASD_KOLOS1.iml" filepath="$PROJECT_DIR$/.idea/ASD_KOLOS1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ASD_Kolos1/kolos1/kolos1.iml" filepath="$PROJECT_DIR$/ASD_Kolos1/kolos1/kolos1.iml" />
+    </modules>
+  </component>
+</project>
